@@ -137,7 +137,7 @@ export function lifecycleMixin (Vue: Class<Component>) {
     }
   }
 }
-
+//模版编译函数
 export function mountComponent (
   vm: Component,
   el: ?Element,
@@ -145,6 +145,7 @@ export function mountComponent (
 ): Component {
   vm.$el = el
   if (!vm.$options.render) {
+    //如果不存在渲染函数render，则创建注释类型的空节点
     vm.$options.render = createEmptyVNode
     if (process.env.NODE_ENV !== 'production') {
       /* istanbul ignore if */
